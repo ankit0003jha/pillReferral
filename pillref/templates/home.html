@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}
+home
+{% endblock title %}
+{% block content %}
+<style>
+  .btn {
+    text-align: center;
+  }
+  #coin{
+    float: right;
+  }
+</style>
+
+<nav class="navbar">
+  <div class="heading">
+    <h2 id="nav-0">Welcome to PillReferral {{request.user.first_name}} {{request.user.last_name}}</h2>
+  </div>
+</nav>
+<br>
+
+{% if request.user.is_authenticated %}
+<button id="coin" style="font-size:24px">Coins {{coins}}<i class="fa fa-bitcoin"></i></button>
+<br>
+<br>
+<hr>
+<a href="{% url 'generate_code'%}"><button class="btn btn-primary">Get Your Referral Code</button></a>
+<a href="{% url 'my_recommendations_view'%}"><button class="btn btn-primary">Referral History</button></a>
+<a href="{% url 'logoutuser'%}"><button class="btn btn-primary">Logout</button></a>
+<br>
+<br>
+<h6>
+  <p>Refer Now and Earn 100 coins on pillreferral </p>
+</h6>
+
+{% else %}
+<a href="{% url 'signup_view'%}"><button class="btn btn-primary">Create an account</button></a>
+{% endif %}
+{% endblock content %}

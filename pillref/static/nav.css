@@ -1,0 +1,41 @@
+ body{
+    background-color: rgb(233, 238, 238);
+    }
+      
+input{
+    border: 2px solid red;
+    }
+     
+#btn-1 {
+    display: inline;
+    border-radius: 20px;
+    }
+      
+#btn-2{
+    display: inline;
+    border-radius: 20px;
+    }
+       
+.navbar{
+    display: flex;
+    align-items: center;
+    position:sticky;
+    top: 0px;
+    }
+    
+.navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.5;
+    }
+    
+#nav-0{
+    margin: 12px 20px;
+    color: white;
+  }

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}
+home
+{% endblock title %}
+{% block content %}
+<style>
+  .btn {
+    text-align: center;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+
+  h1 {
+    display: inline-block;
+  }
+
+  #coin {
+    margin: 0px 80px;
+  }
+</style>
+
+<nav class="navbar">
+  <div class="heading">
+    <h2 id="nav-0">PillReferral</h2>
+  </div>
+</nav>
+<br>
+
+{% if my_recs %}
+<h1>My recommendations:</h1>
+
+<button id="coin" style="font-size:24px">Coins {{coins}}<i class="fa fa-bitcoin"></i></button>
+
+<hr>
+<br>
+
+{% load mask_email %}
+<table style="width:100%">
+  <tr>
+    <th>Username</th>
+    <th>Email ID</th>
+  </tr>
+  {% for p in my_recs %}
+  <tr>
+    <td>{{p.user.first_name}}</td>
+    <td>{{p.user.email| mask}}</td>
+  </tr>
+  {% endfor %}
+</table>
+<br>
+<h5>Your Incentives coins ---> {{coins}}</h5>
+<br>
+<a href="{% url 'home'%}"><button class="btn btn-primary">Back</button></a>
+
+
+{% else %}
+
+<h1>You did't recommend anyone yet..</h1>
+<button id="coin" style="font-size:24px">Coins {{coins}}<i class="fa fa-bitcoin"></i></button>
+<hr>
+<h5>Your Incentives coins ---> {{coins}}</h5>
+<br>
+<a href="{% url 'home'%}"><button class="btn btn-primary">Back</button></a>
+
+
+{% endif %}
+
+{% endblock content %}

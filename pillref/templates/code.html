@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<nav class="navbar">
+  <div class="heading">
+    <h2 id="nav-0">PillReferral</h2>
+  </div>
+</nav>
+<br>
+{% for i in response%}
+ {% if i.id == userid %}
+  <h1> Referral code -- {{i.referral_code}} </h1>
+<h5>You can copy and share this link with your friends---><a href="">http://127.0.0.1:8000/referralcode/{{i.referral_code}}</a>
+{% endif %}
+{% endfor %}
+</h5> <br>
+<h6>
+  <---Refer Now and get 100 coins on every referrel and help your referred user to get 50 coins---><a href="">
+</h6> <br>
+<a href="{% url 'home'%}"><button class="btn btn-primary">Back</button></a>
+
+{% endblock content %}
