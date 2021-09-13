@@ -15,7 +15,7 @@ This application will help users to refer others and earn coins on pillReferral 
 
 1) It provide a referral code service to users.
 2) It allow to refer to other users and referee and referred user both able to earn coins.
-3) When user get loged in to ther specific profile then user can get their personalized referral code with the help of an API.
+3) When user get loged in to their specific profile then user can get their personalized referral code with the help of an API.
 4) API Endpoint - [ https://127.0.0.1:8000/api/referral/code ] ## It will give response when user is authenticated.
 5) Then user will get a link on that page whom he can share with their friends.
 6) And with the help of that link an user will get signed in to their specific account and earn coins.
